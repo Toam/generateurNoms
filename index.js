@@ -15,7 +15,7 @@ app.configure(function(){
 
 app.get('/nom', function(req, res){
   noms = ["Jean Aimar", "Ella Faim", "Amer Credi"];
-  res.send('{"nom": "' + noms[Math.floor(Math.random() * noms.length)] + '"}');
+  res.send('{"name": "' + noms[Math.floor(Math.random() * noms.length)] + '"}');
 });
 
 app.listen(3000);
