@@ -39,20 +39,7 @@ function assertValidJSON(){
   return function(res, b){
     assert.ok(typeof(res.body) == 'object')
   }
-}
-
-function assertHasAName(){
-  return function(res, b){
-    assert.ok(res.body.name)
-  }
-}
-
-function assertValidName(){
-  return function(res, b){
-    assert.ok(typeof(res.body.name) == 'string')
-  }
-}
- 
+} 
 
 var suite = vows.describe('Name generator Tests')
 
@@ -76,8 +63,12 @@ var suite = vows.describe('Name generator Tests')
     'should be 200': assertStatus(200),
     'should have JSON header': assertJSONHead(),
     'body is valid JSON': assertValidJSON(),
-    'body should have a name': assertHasAName(),
-    'should return a name': assertValidName(),
+    'body should have a name': function(res, b){
+      assert.ok(res.body.name)
+    },
+    'should return a name': function(res, b){
+      assert.ok(typeof(res.body.name) == 'string')
+    },
   },
 })
 
