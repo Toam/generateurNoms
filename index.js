@@ -13,15 +13,17 @@ app.configure(function(){
 });
 
 app.get('/name', function(req, res){
+  generateur = new Generateur();
+
   /*
   setTimeout(function() {
     res.header("Content-Type", "application/json; charset=utf-8");
-    res.send('{"name": "' + noms[Math.floor(Math.random() * noms.length)] + '"}');
+    res.send(generateur.getName(req.query));
   }, 500);
   */
-  generateur = new Generateur();
+  
   res.header("Content-Type", "application/json; charset=utf-8");
-  res.send('{"name": "' + generateur.getName() + '"}');
+  res.send(generateur.getName(req.query));
 });
 
 app.listen(3000);
