@@ -1,11 +1,11 @@
 function Generateur() {}
 
-var firstnameM = ["Paul", "Thomas", "Henri", "Benoit", "Julien"];
-var firstnameF = ["Aurélie", "Marie", "Cécile", "Julie", "Fanny"];
-var lastNames = ["MARTIN", "BERZNO", "DUPONT", "MERTA", "HOSTE"];
+var firstnameM = require('./data/firstnameM.js');
+var firstnameF = require('./data/firstnameF.js');
+var lastNames = require('./data/lastNames.js');
 
-var funnyNamesM = ["Jean Aimar", "Ella Faim", "Amer Credi"];
-var funnyNamesF = ["Ella Faim"];
+var funnyNamesM = require('./data/funnyNamesM.js');
+var funnyNamesF = require('./data/funnyNamesF.js');
 
 var genders = ['M', 'F'];
 
@@ -26,7 +26,7 @@ Generateur.prototype.getName = function (params) {
     }
     response.gender = gender;
     response.funny = true;
-    
+
   } else {
     var firstname;
     switch (params.gender) {
