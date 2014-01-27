@@ -1,7 +1,7 @@
 module.exports = [
-	"MARTIN", 
-	"BERZNO", 
-	"DUPONT", 
-	"MERTA", 
+	"MARTIN",
+	"BERZNO",
+	"DUPONT",
+	"MERTA",
 	"HOSTE"
 ];

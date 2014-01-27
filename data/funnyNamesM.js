@@ -1,5 +1,4 @@
 module.exports = [
-	"Jean Aimar", 
-	"Ella Faim", 
+	"Jean Aimar",
 	"Amer Credi"
 ];
