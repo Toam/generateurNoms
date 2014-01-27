@@ -5,8 +5,8 @@ var getName = function getName () {
     type: 'GET',
     url: 'http://localhost:3000/name', // L'url vers laquelle la requete sera envoyee
     data: {
-      funny: true,
-      gender: 'toto',
+      funny: $('#funny').is(":checked"),
+      gender: $('#gender').val()
     },
     success: function(data, textStatus, jqXHR) {
       $("#name").text(data.name);

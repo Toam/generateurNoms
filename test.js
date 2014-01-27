@@ -149,8 +149,57 @@ var suite = vows.describe('Name generator Tests')
     },
     'funny param should be true': function(res, b){
       assert.equal(res.body.funny, true)
+    }
+  }
+})
+
+.addBatch({
+  'Test /name !funny': {
+    topic: function(){
+      apiTest.get('name?funny=false', {}, this.callback)
     },
-  },
+    'should be 200': assertStatus(200),
+    'should have JSON header': assertJSONHead(),
+    'body is valid JSON': assertValidJSON(),
+    'body should have a name': function(res, b){
+      assert.ok(res.body.name)
+    },
+    'body should have a valid name': function(res, b){
+      assert.equal(typeof(res.body.name), 'string')
+    },
+    'body should have a gender': function(res, b){
+      assert.ok(res.body.gender)
+    },
+    'funny param should be false': function(res, b){
+      assert.equal(res.body.funny, false)
+    }
+  }
+})
+
+.addBatch({
+  'Test /name !funny and gender F': {
+    topic: function(){
+      apiTest.get('name?funny=false&gender=F', {}, this.callback)
+    },
+    'should be 200': assertStatus(200),
+    'should have JSON header': assertJSONHead(),
+    'body is valid JSON': assertValidJSON(),
+    'body should have a name': function(res, b){
+      assert.ok(res.body.name)
+    },
+    'body should have a valid name': function(res, b){
+      assert.equal(typeof(res.body.name), 'string')
+    },
+    'body should have a gender': function(res, b){
+      assert.ok(res.body.gender)
+    },
+    'gender should be F': function(res, b){
+      assert.equal(res.body.gender, 'F')
+    },
+    'funny param should be false': function(res, b){
+      assert.equal(res.body.funny, false)
+    }
+  }
 })
 
 suite.export(module)
