@@ -26,4 +26,7 @@ app.get('/name', function(req, res){
   res.send(generateur.getName(req.query));
 });
 
-app.listen(3000);
+var port = process.env.PORT || 3000;
+app.listen(port, function() {
+  console.log("Listening on port " + port);
+});
