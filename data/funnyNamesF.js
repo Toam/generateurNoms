@@ -11,7 +11,7 @@ module.exports = [
 	"Carla PAROLEDOR",
 	"Cécile ONXA",
 	"Cécile ENCIEUX",
-	'Céline ÉVITABLE",
+	"Céline ÉVITABLE",
 	"Claire HENETT",
 	"Colette STEROLE",
 	"Ella FAIM",
