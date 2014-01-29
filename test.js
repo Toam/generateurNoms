@@ -1,9 +1,9 @@
-var port = process.env.PORT || 3000;
 var request = require('request'),
     vows = require('vows'),
-    assert = require('assert'),
-    apiUrl = "http://localhost:"+port+"/";
- 
+    assert = require('assert');
+
+var apiUrl = process.env.WERCKER_APPLICATION_URL || "http://localhost:3000/";
+
 var apiTest = {
   general: function(method, url, data, cb){
     request(
