@@ -1,7 +1,8 @@
+var port = process.env.PORT || 3000;
 var request = require('request'),
     vows = require('vows'),
     assert = require('assert'),
-    apiUrl = "http://localhost:3000/";
+    apiUrl = "http://localhost:"+port+"/";
  
 var apiTest = {
   general: function(method, url, data, cb){
@@ -20,7 +21,7 @@ var apiTest = {
   post: function(url, data, cb){apiTest.general('POST', url, data, cb)},
   put: function(url, data, cb){apiTest.general('PUT', url, data, cb)},
   del: function(url, data, cb){apiTest.general('DELETE', url, data, cb)}
-}
+};
  
 function assertStatus(code) {
   return function (res, b, c) {
@@ -74,8 +75,8 @@ var suite = vows.describe('Name generator Tests')
     },
     'funny param should be false': function(res, b){
       assert.equal(res.body.funny, false)
-    },
-  },
+    }
+  }
 })
  
 .addBatch({
@@ -100,8 +101,8 @@ var suite = vows.describe('Name generator Tests')
     },
     'funny param should be false': function(res, b){
       assert.equal(res.body.funny, false)
-    },
-  },
+    }
+  }
 })
  
 .addBatch({
@@ -126,8 +127,8 @@ var suite = vows.describe('Name generator Tests')
     },
     'funny param should be false': function(res, b){
       assert.equal(res.body.funny, false)
-    },
-  },
+    }
+  }
 })
  
 .addBatch({
@@ -200,6 +201,6 @@ var suite = vows.describe('Name generator Tests')
       assert.equal(res.body.funny, false)
     }
   }
-})
+});
 
-suite.export(module)
+suite.export(module);
