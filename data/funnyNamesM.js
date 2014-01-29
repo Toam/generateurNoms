@@ -10,7 +10,7 @@ module.exports = [
 	"José PALDIR",
 	"Laurent DEVOUX",
 	"Louis FINE",
-	"Luc SURIEUX
+	"Luc SURIEUX",
 	"Marc ASSIN",
 	"Régis CIDE",
 	"Xavier KAFAIRGAF",
