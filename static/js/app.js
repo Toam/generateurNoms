@@ -3,7 +3,7 @@ var getName = function getName () {
   $("#generate").addClass("disabled");
   $.ajax({
     type: 'GET',
-    url: 'http://gen.toam.fr:3000/name',
+    url: 'http://gen.toam.fr/name',
     data: {
       funny: $('#funny').is(":checked"),
       gender: $('#gender').val()
