@@ -3,7 +3,7 @@ var getName = function getName () {
   $("#generate").addClass("disabled");
   $.ajax({
     type: 'GET',
-    url: 'http://localhost:3000/name', // L'url vers laquelle la requete sera envoyee
+    url: 'http://gen.toam.fr:3000/name',
     data: {
       funny: $('#funny').is(":checked"),
       gender: $('#gender').val()
