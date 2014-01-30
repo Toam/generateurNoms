@@ -1,7 +1,7 @@
 var getName = function getName () {
   $("#generate").text("Chargement ...");
   $("#generate").addClass("disabled");
-  ga('send', 'event', 'requete', 'nom', $('#funny').is(":checked");
+  ga('send', 'event', 'requete', 'nom', $('#funny').is(":checked"));
   $.ajax({
     type: 'GET',
     url: 'http://gen.toam.fr/name',
