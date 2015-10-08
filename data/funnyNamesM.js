@@ -35,5 +35,6 @@ module.exports = [
 	"Sacha TOUILLE",
 	"Théo JASMIN",
 	"Xavier KAFAIRGAF",
-	"Yann AKEPOURLUI"
+	"Yann AKEPOURLUI",
+	"Jean PEUPLUT"
 ];
